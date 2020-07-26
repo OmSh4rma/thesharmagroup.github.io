@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  background-color: black;
+  font-size: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  background-color: black;
+  padding: 30px;
+  text-align: center;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #000;
+  
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+#navbar a.right{
+float:right;
+}
+#navbar a.right:hover{
+background-color: #ddd;
+  color: black;
+}
+
+#navbar a:hover {
+  
+}
+
+#navbar a.active {
+
+}
+.log{
+
+    width:auto;
+height: 80px;
+padding-left: 10px;
+padding-top: 0px;
+}
+.content {
+background-color:black;
+  padding: 16px;
+}
+.content2 {
+background-color:black;
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align:center;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+
+}
+
+.sidenav a:hover{
+  color: white;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+color: white;
+  float: left;
+  width: 50%;
+  padding: 30px;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+}
+
+.column:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+</style>
+</head>
+<body>
+<!--
+<div class="header">
+  <h2>Scroll Down</h2>
+  <p>Scroll down to see the sticky effect.</p>
+</div>
+-->
+<div id="navbar">
+  <a class="active" href="index.html">
+    <img class="log" src="images/logoss.png">
+  </a>
+  <a class="right">
+  <span style="font-size:28px;cursor:pointer" onclick="openNav()">&#9776;</span></a>
+ <!-- <a href="javascript:void(0)">News</a>
+  <a href="javascript:void(0)">Contact</a>-->
+ </div>
+ <div class="content2">
+    <h3> 
+
+
+    </h3>
+    <p>
+        
+    </p>
+  </div>
+ <div class="content">
+  
+    <div class="row">
+        <div class="column" style="background-color:#000;">
+          <img src="images/foundation.png" alt="Avatar" class="image">
+          <div class="overlay">
+            <div class="text">A charity</div>
+          </div>
+        </div>
+        <div class="column" style="background-color:#000;">
+          <img src="images/reales.png" alt="Avatar" class="image">
+          <div class="overlay">
+            <div class="text">Real Estate empire build in cities such as Mumbai, Ahemdabad, Milton Keynes and Lubumbashi</div>
+          </div>
+        </div>
+        <div class="column" style="background-color:#000;">
+          <img src="images/supermarche.png" alt="Avatar" class="image">
+          <div class="overlay">
+            <div class="text">Online Supermarket, a subscription based business where customers get their products delivered at their door step.</div>
+          </div>
+        </div>
+        <div class="column" style="background-color:#000;">
+          <img src="images/capitalss.png" alt="Avatar" class="image">
+          <div class="overlay">
+            <div class="text">Investments of over $500 million have been made to many stratups in India.</div>
+          </div>
+        </div>
+        <div class="column" style="background-color:#000;">
+          <img src="images/beast'.png" alt="Avatar" class="image">
+          <div class="overlay">
+            <div class="text">A premium clothing line, for youth. Its profits go to The Sharma Foundation.</div>
+          </div>
+        </div>
+        <div class="column" style="background-color:#000;">
+          <img src="images/benj.png" alt="Avatar" class="image">
+          <div class="overlay">
+            <div class="text">"In god we trust".</div>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+ <script>
+window.onscroll = function() {myFunction()};
+    
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+
+
+    
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    
+    
+    <script>
+    
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "100%";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
+    
+
+</div>
+
+
+
+</body>
+</html>
